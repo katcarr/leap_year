@@ -14,15 +14,17 @@ $(function() {
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
 
-    $(".year").text(year);
-    if(!result){
-      $(".not").text("not");
-    }else{
-      $(".not").text("");
+    if (year) {
+      $(".year").text(year);
+      if(!result){
+        $(".not").text("not");
+      }else{
+        $(".not").hide();
+      }
+        $("#result").show();
+    } else {
+      alert("Please enter a year");
     }
-      $("#result").show();
-      event.preventDefault();
-
+    event.preventDefault();
   });
-
 });
